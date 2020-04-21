@@ -6,6 +6,22 @@ describe package 'python3-pip' do
   it { should be_installed }
 end
 
+describe package 'packer' do
+  it { should be_installed }
+end
+
+describe package('chef') do
+  it { should be_installed }
+end
+
+describe package('default-jdk') do
+  it { should be_installed }
+end
+
+describe package('default-jre') do
+  it { should be_installed }
+end
+
 describe directory('/usr/local/lib/python3.6/dist-packages/atomicwrites') do
   it { should exist }
 end
