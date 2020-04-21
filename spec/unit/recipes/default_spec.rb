@@ -28,9 +28,9 @@ describe 'It_Jobs_Watch_Cookbook::default' do
      expect(chef_run).to create_directory '/home/ubuntu/Downloads'
    end
 
-   it 'should create a Downloads folder' do
-     expect(chef_run).to create_directory '/home/vagrant/Downloads'
-   end
+   # it 'should create a Downloads folder' do
+   #   expect(chef_run).to create_directory '/home/vagrant/Downloads'
+   # end
 
    it 'should create a remote Downloads folder' do
      expect(chef_run).to create_remote_directory '/home/ubuntu/app'
