@@ -8,15 +8,15 @@
 apt_update 'update_sources' do
   action :update
 end
+
 package 'packer'
 
 package 'python3-pip'
 
-remote_directory "/home/ubuntu/app" do
-  user 'root'
-  group 'root'
-  source 'requirements'
-  action :create
+bash 'install_java' do
+  code <<-EOH
+    sudo apt-get -y install default-jdk default-jre
+    EOH
 end
 
 bash 'install chef' do  code <<-EOL
@@ -26,10 +26,11 @@ bash 'install chef' do  code <<-EOL
   EOL
 end
 
-bash 'install_java' do
-  code <<-EOH
-    sudo apt-get -y install default-jdk default-jre
-    EOH
+remote_directory "/home/ubuntu/app" do
+  user 'root'
+  group 'root'
+  source 'requirements'
+  action :create
 end
 
 bash "install_requirement" do
