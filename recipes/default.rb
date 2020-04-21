@@ -9,7 +9,6 @@ apt_update 'update_sources' do
   action :update
 end
 
-package 'packer'
 package 'python3-pip'
 package 'packer'
 
