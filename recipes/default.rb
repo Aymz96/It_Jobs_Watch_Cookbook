@@ -8,10 +8,9 @@
 apt_update 'update_sources' do
   action :update
 end
+package 'packer'
 
 package 'python3-pip'
-
-package 'packer'
 
 remote_directory "/home/ubuntu/app" do
   user 'root'
